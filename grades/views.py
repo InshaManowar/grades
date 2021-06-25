@@ -13,8 +13,8 @@ def total_marks(request):
         a = float(1.5 * float(internal_marks))
         b = float(2.5 * float(cgpa))
         res = a + b
-        improve = '1000'
-        grade = 'Z'
+        improve = 'error'
+        grade = 'error'
         if res < 40 :
             grade = 'F'
         elif res >= 40 and res <= 49:
@@ -23,11 +23,10 @@ def total_marks(request):
         elif res >= 50 and res <= 59:
             grade = 'D'
             improve = 60 - float(internal_marks)
-
         elif res >= 60 and res <= 69:
             grade = 'C'
             improve = 70 - float(internal_marks)
-        elif res >= 70 and res <= 79:
+        elif res >= 70 and res <= 80:
             grade = 'B'
             improve = 80 - float(internal_marks)
         elif res >= 80 and res <= 89:
