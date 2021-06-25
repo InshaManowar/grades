@@ -13,32 +13,32 @@ def total_marks(request):
         a = float(1.5 * float(internal_marks))
         b = float(2.5 * float(cgpa))
         res = a + b
-        
+      
         if res < 40 :
             grade = 'F'
         elif res >= 40 and res <= 49:
             grade = 'E'
-            improve = 49 - float(internal_marks)
+            improve = 50 - float(internal_marks)
         elif res >= 50 and res <= 59:
             grade = 'D'
-            improve = 59 - float(internal_marks)
+            improve = 60 - float(internal_marks)
 
         elif res >= 60 and res <= 69:
             grade = 'C'
-            improve = 69 - float(internal_marks)
+            improve = 70 - float(internal_marks)
         elif res >= 70 and res <= 79:
             grade = 'B'
-            improve = 79 - float(internal_marks)
+            improve = 80 - float(internal_marks)
         elif res >= 80 and res <= 89:
             grade = 'A'
-            improve = 89 - float(internal_marks)
+            improve = 90 - float(internal_marks)
         elif res > 90:
             grade = 'A+'
  
         return render(request, 'grades/result.html', {'result':res, 'grade':grade, 'improve':improve})
     else:
         res = "enter valid digits"
-        return render(request, 'grades/result.html', {'result':res})
+        return render(request, 'grades/result.html', {'result':res,'grade':grade, 'improve':improve})
     
 def cgpa_result(request):
     marks1=request.POST.get('marks1')
