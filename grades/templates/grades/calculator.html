@@ -4,7 +4,7 @@
 
 <div class="container text-center">
     <h1 style="padding: 5%;">Calculate your Grades</h1>
-<form action="result/" method="POST" style="margin-top: 9%;">
+<form autocomplete="off" action="result/" method="POST" style="margin-top: 5%;">
     {% csrf_token %}
 
     <p class="lead" style="font-size: 250%;">Enter internal marks:</p> <input type="number" step='0.01' name="internal_marks"><br><br>
