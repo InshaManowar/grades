@@ -13,7 +13,8 @@ def total_marks(request):
         a = float(1.5 * float(internal_marks))
         b = float(2.5 * float(cgpa))
         res = a + b
-      
+        improve = '1000'
+        grade = 'Z'
         if res < 40 :
             grade = 'F'
         elif res >= 40 and res <= 49:
@@ -34,6 +35,7 @@ def total_marks(request):
             improve = 90 - float(internal_marks)
         elif res > 90:
             grade = 'A+'
+            improve = 'no more'
  
         return render(request, 'grades/result.html', {'result':res, 'grade':grade, 'improve':improve})
     else:
