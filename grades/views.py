@@ -17,6 +17,7 @@ def total_marks(request):
         grade = 'error'
         if res < 40 :
             grade = 'F'
+            improve = 50 - float(internal_marks)
         elif res >= 40 and res < 49.5:
             grade = 'E'
             improve = 50 - float(internal_marks)
