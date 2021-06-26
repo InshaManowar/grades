@@ -24,6 +24,7 @@ def total_marks(request):
         elif res >= 49.5 and res < 59.5:
             grade = 'D'
             improve = 60 - float(internal_marks)
+            
         elif res >= 59.5 and res < 69.5:
             grade = 'C'
             improve = 70 - float(internal_marks)
@@ -40,7 +41,6 @@ def total_marks(request):
         return render(request, 'grades/result.html', {'result':res, 'grade':grade, 'improve':improve})
     else:
         res = "enter valid digits"
-     
         return render(request, 'grades/result.html', {'result':res,'grade':grade, 'improve':improve})
     
 def cgpa_result(request):

@@ -1,17 +1,34 @@
 {% extends 'grades/base.html' %}
 
+
+{% block head %}
+
+<style>
+  input.form-control{
+    width: 60%;
+  
+  }
+</style>
+
+{% endblock head %}
+  
+
 {% block content %}
 
 <div class="container text-center">
     <h1 style="padding: 5%;">Calculate your Grades</h1>
-<form autocomplete="off" action="result/" method="POST" style="margin-top: 5%;">
+<form autocomplete="off" action="result/" method="POST" style="margin-top: 5%;" class="text-center form-group">
     {% csrf_token %}
 
     <p class="lead" style="font-size: 250%;">Enter internal marks:</p> <input required=true type="number" step='0.01' name="internal_marks"><br><br>
   <p class="lead" style="font-size: 250%;"> Enter cgpa: </p><input required=true type="number" step='0.01' name="cgpa"><br><br>
     
-    <input class="btn btn-primary" type="submit">
+    <input class="btn btn btn-outline-danger" type="submit">
 </form>
+<hr>
+<br>
+<p class="text-muted">The calculation is based on : Total marks = ((0.5 * Internal marks) + (2.5 * CGPA)) + Internal Marks</p> <br>
+<p class="text-muted">For more clarity, refer to the official college circulars.</p>
 
 </div>
 
